@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap" rel="stylesheet">
+
+  <title>Frontend Mentor | Article preview component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    body {
+      margin: 0;
+      box-sizing: border-box;
+      background-color: hsl(212, 23%, 69%);
+      font-size: 13px;
+      font-family: 'Manrope', sans-serif;
+    }
+
+    .main {
+      margin-top: 7%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .main-container {
+      max-width: 750px;
+      min-width: 600px;
+      width: 100%;
+      padding: 0 16px;
+    }
+
+    .card {
+      display: flex;
+      border: 1px solid #eaecee;
+      border-radius: 8px;
+      min-height: 200px;
+      overflow: hidden;
+      margin-top: 24px;
+      transition: all 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    .card-image {
+      flex-basis: 40%;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .content {
+      flex-basis: 60%;
+      padding: 30px;
+      background-color: #ffff;
+      font-weight: 400;
+    }
+
+
+    .profile {
+      display: inline-flex;
+      margin-top: 35px;
+    }
+
+    .profile-image {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background-size: cover;
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      margin-left: 10px;
+    }
+
+    .title {
+      margin-bottom: 32px;
+      font-size: 1.7em;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .subtext {
+      color: #6d7f97;
+      font-size: 15px;
+    }
+
+    .profile-name {
+      margin-bottom: 3px;
+    }
+
+    .tooltip {
+      float: right;
+      margin-top: 40px;
+    }
+
+    .tooltip-content {
+
+      display: none;
+      align-items: center;
+      justify-content: space-around;
+      position: absolute;
+      left: 64%;
+      top: 49%;
+      width: 180px;
+      border-radius: 25px;
+      background-color: rgba(72, 85, 106, 0.7);
+      padding: 10px;
+      color: hsl(212, 23%, 69%);
+      text-transform: uppercase;
+      letter-spacing: 0.3;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .tooltip-content::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      border-width: 10px;
+      border-style: solid;
+      border-color: hsl(217, 19%, 35%) transparent transparent transparent;
+      left: 58%;
+    }
+
+
+
+
+    .tooltip-icon {
+      width: 50px;
+      height: 36px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(158, 175, 194, 0.5);
+      border-radius: 50%;
+    }
+
+    .tooltip-icon img {
+      width: 25px;
+      height: 25px;
+    }
+
+    .toolTipVisible {
+      display: flex;
+    }
+
+    span {
+      letter-spacing: 4px;
+    }
+
+    .attribution {
+      font-size: 11px;
+      position: absolute;
+      bottom: 20px;
+      left: 42%;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="main">
+    <div class="main-container">
+      <div class="card">
+        <div class="card-image" style="background-image: url(./images/drawers.jpg);"></div>
+        <div class="content">
+          <div class="title">
+            Shift the overall look and feel by adding these wonderful
+            touches to furniture in your home
+          </div>
+          <div class="subtext">
+            Ever been in a room and felt like something was missing? Perhaps
+            it felt slightly bare and uninviting. I’ve got some simple tips
+            to help you make any room feel complete.
+          </div>
+          <div class="profile">
+
+            <div class="profile-image" style="background-image: url(./images/avatar-michelle.jpg);"></div>
+            <div class="info">
+              <div class="profile-name">Michelle Appleton</div>
+              <div class="post-date">28 Jun 2020</div>
+            </div>
+          </div>
+
+          <div class="tooltip">
+            <div class="tooltip-icon"><img src="images/icon-share.svg" alt=""></a>
+            </div>
+            <div class=" tooltip-content">
+              <div><span>Share</span></div>
+              <a href="#"><img src='images/icon-facebook.svg'></img></a>
+              <a href="#"><img src='images/icon-twitter.svg'></img></a>
+              <a href="#"><img src='images/icon-pinterest.svg'></img></a>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  <script>
+    const toolTip = document.getElementsByClassName('tooltip-content')
+    const toolTipIcon = document.querySelector('.tooltip-icon');
+    toolTipIcon.addEventListener('click', () => {
+      console.log('clicked')
+      toolTip[0].classList.toggle('toolTipVisible');
+
+    })
+
+  </script>
+</body>
+
+</html>
